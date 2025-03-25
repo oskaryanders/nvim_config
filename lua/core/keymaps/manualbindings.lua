@@ -42,3 +42,35 @@ vim.keymap.set('i', '<C-h>', '<Left>')
 vim.keymap.set('i', '<C-l>', '<Right>')
 vim.keymap.set('i', '<C-j>', '<Down>')
 vim.keymap.set('i', '<C-k>', '<Up>') --TODO fix this
+
+-- Telescope/FZF
+vim.keymap.set('n', '<space>fd', require('telescope.builtin').find_files)
+vim.keymap.set('n', '<space>fw', function()
+  require('telescope.builtin').find_files {
+    cwd = '/home/oskarand/workspace',
+  }
+end)
+
+-- Treesitter
+-- Go to next method:
+vim.keymap.set('n', 'mn', function()
+  vim.cmd 'TSTextobjectGotoNextStart @function.outer'
+end, { desc = 'Go to next function/method' })
+
+vim.keymap.set('n', 'mb', function()
+  vim.cmd 'TSTextobjectGotoPreviousStart @function.outer'
+end, { desc = 'Go to previous function/method' })
+
+-- Keep selection after indenting
+vim.keymap.set('v', '>', '>gv', { desc = 'Indent and keep selection' })
+vim.keymap.set('v', '<', '<gv', { desc = 'Dedent and keep selection' })
+
+-- Toggle comment on the current line
+vim.keymap.set('n', '<space>/', function()
+  require('Comment.api').toggle.linewise.current()
+end, { noremap = true, silent = true })
+vim.keymap.set('v', '<space>/', function()
+  local esc = vim.api.nvim_replace_termcodes('<ESC>', true, false, true)
+  vim.api.nvim_feedkeys(esc, 'nx', false)
+  require('Comment.api').toggle.linewise(vim.fn.visualmode())
+end, { noremap = true, silent = true })
