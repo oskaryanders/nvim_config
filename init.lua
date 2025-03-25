@@ -8,20 +8,19 @@ vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 
 -- 1. Load settings
-require('core.settings')
--- 2. Load keymaps 
-require('core.keymaps')
--- 2. Load custom commands
-require('core.commands')
--- 3. Install `lazy.nvim` plugin manager
-require('lazy-bootstrap')
--- 4. Load plugins
-require('core.plugins')
+require 'core.settings'
+-- 2. Install `lazy.nvim` plugin manager
+require 'lazy-bootstrap'
+-- 3. Load plugins
+require 'core.plugins'
+-- 4. Load custom commands
+require 'core.commands'
 -- 5. Load UI configuration (theme and statusline).
-require('ui')
--- Setup LSP
-require('lsp-configuration')
-
+require 'ui'
+-- 6. Load keymaps
+require 'core.keymaps'
+-- 7. Setup LSP
+require 'lsp-configuration'
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
