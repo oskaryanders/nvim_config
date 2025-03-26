@@ -9,31 +9,39 @@
 --    :Lazy update
 --
 -- NOTE: Here is where you install your plugins.
-require("lazy").setup({
-	-- Collection of IDE-related plugins
-	require("core.plugins.ide"),
-	-- Catppuccin is a theme plugin
-	require("core.plugins.catppuccin"),
+require('lazy').setup({
+  -- Collection of IDE-related plugins
+  require 'core.plugins.ide',
+  -- Catppuccin is a theme plugin
+  require 'core.plugins.catppuccin',
+  -- Provides colors for things like 'white'
+  require 'core.plugins.colorizer',
+  -- Icons to make vim pretty(er)
+  require 'core.plugins.nvim-web-devicons',
+  -- Shows possible follow ups for the keys you are writing.
+  require 'core.plugins.which-key',
+  -- Autosave
+  require 'core.plugins.autosave',
 }, {
-	ui = {
-		-- If you are using a Nerd Font: set icons to an empty table which will use the
-		-- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
-		icons = vim.g.have_nerd_font and {} or {
-			cmd = "⌘",
-			config = "🛠",
-			event = "📅",
-			ft = "📂",
-			init = "⚙",
-			keys = "🗝",
-			plugin = "🔌",
-			runtime = "💻",
-			require = "🌙",
-			source = "📄",
-			start = "🚀",
-			task = "📌",
-			lazy = "💤 ",
-		},
-	},
+  ui = {
+    -- If you are using a Nerd Font: set icons to an empty table which will use the
+    -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
+    icons = vim.g.have_nerd_font and {} or {
+      cmd = '⌘',
+      config = '🛠',
+      event = '📅',
+      ft = '📂',
+      init = '⚙',
+      keys = '🗝',
+      plugin = '🔌',
+      runtime = '💻',
+      require = '🌙',
+      source = '📄',
+      start = '🚀',
+      task = '📌',
+      lazy = '💤 ',
+    },
+  },
 })
 
 -- vim: ts=2 sts=2 sw=2 et

@@ -49,4 +49,15 @@ return {
     dependencies = { 'nvim-lua/plenary.nvim' },
     lazy = false,
   },
+  {
+    'numToStr/Comment.nvim',
+    opts = {
+      --
+    },
+  },
+  {
+    'windwp/nvim-autopairs',
+    event = 'InsertEnter',
+    config = true,
+  },
 }

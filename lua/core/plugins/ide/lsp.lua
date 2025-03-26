@@ -10,4 +10,9 @@ return {
     -- https://github.com/neovim/nvim-lspconfig
     'neovim/nvim-lspconfig',
   },
+  {
+    -- Better lsp warnings
+    -- https://github.com/Maan2003/lsp_lines.nvim
+    'maan2003/lsp_lines.nvim',
+  },
 }
