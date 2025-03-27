@@ -12,8 +12,10 @@
 require('lazy').setup({
   -- Collection of IDE-related plugins
   require 'core.plugins.ide',
-  -- Catppuccin is a theme plugin
-  require 'core.plugins.catppuccin',
+  -- Theme
+  -- require 'core.plugins.catppuccin',
+  -- require 'core.plugins.jellybeans',
+  require 'core.plugins.tokyonight',
   -- Provides colors for things like 'white'
   require 'core.plugins.colorizer',
   -- Icons to make vim pretty(er)
