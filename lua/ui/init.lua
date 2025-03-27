@@ -8,3 +8,5 @@ require 'ui.colorizer_config'
 vim.cmd 'colorscheme catppuccin'
 -- Set color of constants
 vim.api.nvim_set_hl(0, 'Constant', { fg = '#8B0000' }) -- Dark red color
+-- Configure status bar.
+require 'ui.lualine_config'
