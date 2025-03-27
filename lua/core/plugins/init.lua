@@ -22,6 +22,8 @@ require('lazy').setup({
   require 'core.plugins.which-key',
   -- Autosave
   require 'core.plugins.autosave',
+  -- Highlight arguments
+  require 'core.plugins.hlargs',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
